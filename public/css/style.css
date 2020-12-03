@@ -1,0 +1,32 @@
+body{
+    background-image: url("img/batBackground.jpg");
+    background-repeat: repeat;
+}
+header{    
+    font-family: 'Special Elite', cursive;
+    color: white; 
+     
+}
+div[class="carousel-caption d-none d-md-block"]>h5{
+    color: #d10f0c;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+nav>h1[class="image-text"]{
+    font-family: 'Creepster', cursive;
+
+}
+.nav-item{
+    font-family: 'Creepster', cursive;
+    
+}
+.nav-link{
+    color: white;
+    
+}
+.nav-link:hover{
+    color: #d10f0c;
+}
+.carousel-item>p{
+    color: red;
+}
