@@ -15,11 +15,3 @@
 <style scoped>
 
 </style>
-
-
-export default {
-}
-</script>
-
-<style lang="scss">
-</style>

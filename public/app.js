@@ -2,19 +2,20 @@ var app = new Vue({
     el: "#app",
     data: {
         titulo: 'Ejercicio',
-        team: [
-            {
+        team: [{
+
                 codigo: 1,
                 nombre: 'Luis Codo',
                 descripcion: 'Edad: 37. Profesión: Profesor de Informática Hobbies: Videojuegos (Valorant, Age of Empires, World of Warcraft), cocinar, lecturas, mangas y animés, películas.',
                 rol: 'Desarrollador backend',
-                // image: ''
+                image: ''
             }, {
+
                 codigo: 2,
                 nombre: 'Orlando Palacios',
                 descripcion: 'Edad: 29. Profesión: Ingeniero de Petroleos. Hobbies: Tecnología, lectura y temas paranormales.',
                 rol: 'Analista de Software',
-                // image: ''
+                image: ''
            
             }, {
                 codigo: 3,
