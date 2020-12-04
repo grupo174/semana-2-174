@@ -1,5 +1,45 @@
-// new Vue({
-//     el:#app,
+var app = new Vue({
+    el:'#app',
+    data: {
+        titulo: 'TeamCard';
+        team: [{
+            codigo: 1,
+            nombre: 'Luis Codo',
+            descripcion: 'Edad: 37. Profesión: Profesor de Informática Hobbies: Videojuegos (Valorant, Age of Empires, World of Warcraft), cocinar, lecturas, mangas y animés, películas.',
+            rol: 'Desarrollador backend',
+            image: ''
+            }, {
+            codigo: 2,
+            nombre: 'Orlando Palacios',
+            escripcion: 'texto.',
+            Rol: 'Analista de Software',
+            image: ''
+           
+            }, {
+            codigo: 3,
+            nombre: 'Juan Esteban Quintero',
+            descripcion: 'texto.',
+            rol: 'Desarrollador frontend',
+            image: ''
+           
+            }, {
+            codigo: 4,
+            nombre: 'Nallive Trujillo',
+            descripcion: 'texto.',
+            rol: 'Arquitecto de software',
+            image: ''
+           
+            }, {
+            codigo: 5,
+            nombre: 'Yaned Sánchez',
+            descripcion: 'texto.',
+            rol: 'Tester'
+            image: ''
+            }]
+
+    }
+
+    
 //     template: `<div v-bind: style="estilos" v-on: click="log()"`,
 //     data: {
 //         titulo: 'Rectangulo',

@@ -14,25 +14,23 @@
   <div id="app">
     <div class="container-fluid">
         <div class="row justify-content-center mb-5">
-         <div class="col mt-5">
-         <div class="card text-white bg-dark">
+         <div class="col mt-5" v-for="member in team">
+         <div class="card text-white" v-bind:class="{ 'bg-dark': member.codigo % 2 == 1, 'bg-danger': member.codigo % 2 == 0 }">
          <div class="d-flex justify-content-center p-2">
          </div>
          <div class="card-body">
            <div class = "card-image">
               <img src = "luis.jpg" class = "card-img-top" alt="Luis"></div>
-         <h5 class="card-title">Team member 1: Desarrollador backend </h5>
-         <h4><b>Luis cobo</b></h4>
-         <p class="card-text"><b>Edad: </b>37.</p>
-         <p> <b>Profesión: </b>Professor de Informática </p>
-         <p> <b>Hobbies: </b>Videojuegos (Valorant, Age of Empires, World of Warcraft), cocinar, lecturas, mangas y animés, películas. </p>
+         <h5 class="card-title">Team member {{ member.codigo }} {{ member.rol }}</h5>
+         <h4><b>{{ member.nombre }}</b></h4>
+         <p class="card-text"><b>{{ member.Descripcion }}</b> </p>
          </div>
          <div class="card-footer">
          <small class="text-muted">Last updated 3 mins ago</small>
          </div>
          </div>
          </div>
-         <div class="col mt-5">
+         <!-- <div class="col mt-5">
          <div class="card text-white bg-danger">
          <div class="d-flex justify-content-center p-2">
          </div>
@@ -50,14 +48,14 @@
          </div>
          </div>
          </div>
-         <div class="col mt-5">
+         <div class="col mt-5" v-for="member in team">
          <div class="card border-info text-info">
          <div class="d-flex justify-content-center p-2">
          </div>
          <div class="card-body">
           <div class = "card-image">
          <img src = "esteban.jpg" class = "card-img-top" alt="Esteban"></div>
-         <h5 class="card-title">Team member 3: Desarrollador frontend</h5>
+         <h5 class="card-title">Team member {{ member.codigo }}</h5>
          <h4><b>Juan Esteban Quintero</b></h4>
          <p class="card-text"><b>Edad: </b>26.</p>
          <p> <b>Profesión: </b>Ingeniero de Sistemas y Computación. </p>
@@ -75,7 +73,7 @@
          <div class="card-body">
           <div class = "card-image">
          <img src = "nallive.jpg" class = "card-img-top" alt="Nallive"></div>
-         <h5 class="card-title">Team member 4: Arquitecto de software</h5>
+         <h5 class="card-title">Team member {{ member.codigo }}</h5>
          <h4><b>Nallive Trujillo</b></h4>
          <p class="card-text"><b>Edad: </b>30.</p> 
          <p> <b>Profesión: </b>Actualmente estudia un curso de programacion por el convenio Mision TIC-UTP 2022. </p> 
@@ -105,7 +103,7 @@
          </div>
          </div>
         </div>
-        </div>
+        </div> -->
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src = "app.js"></script>
