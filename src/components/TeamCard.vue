@@ -1,6 +1,6 @@
 <template>
      <div id="app">
-       <img :src="require('./assets/logo.png')" />
+       <img alt = "pesadilla" src="./assets/logo.png')" />
      </div>
 </template>
 

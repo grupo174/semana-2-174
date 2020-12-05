@@ -8,7 +8,7 @@ var app = new Vue({
                 nombre: 'Luis Codo',
                 descripcion: 'Edad: 37. Profesión: Profesor de Informática Hobbies: Videojuegos (Valorant, Age of Empires, World of Warcraft), cocinar, lecturas, mangas y animés, películas.',
                 rol: 'Desarrollador backend',
-                image: ''
+                image: <img alt = "Luis" src="./assets/luis.jpg')" />
             }, {
 
                 codigo: 2,
