@@ -1,17 +1,75 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-    <title>PROYECTO SPRINT 2</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Noticias de Colombia</title>
 </head>
-
-<body>
-    <div id="app">
+<body onload="traerNoticias()">
+  <h1>Noticias Colombia!</h1>
+  <div class="container" id="contenido">
+    <div class="row">
+      <div class="col" id="n0"></div>
+      <div class="col" id="n1"></div>
+      <div class="w-100"></div>
+      <div class="col" id="n2"></div>
+      <div class="col" id="n3"></div>
     </div>
-</body>
+  </div>
+  
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script lang="javascript">
+    
+    async function fetchData() {
+        try {
+            const url="feedspot.com/infiniterss.php?_src=feed_title&followfeedid=1482949&q=site:https%3A%2F%2Fnode2.feed43.com%2Fanomalist.xml";
+            const response = await fetch(`https://v1.nocodeapi.com/luiscobo/xml_to_json/WeFCwjLyGHGrYkHd?url=${url}`, {
+                method: "get",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const json = await response.json();
+            return json;
+        }
+        catch (error) {
+            console.error("Error:", error);
+        }
+        return undefined;
+    }
+
+    function traerNoticias() {
+        fetchData().then(data => {
+
+            let item = data.rss.channel.item;
+            for (let i = 0; i < 4; ++i) {
+                let texto = `
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="${item[i].enclosure.$.url}" width="286" height="180" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">${item[i].title}</h5>
+                            <p class="card-text">${item[i].description}</p>
+                            <a href="${item[i].link}" class="btn btn-primary">Ver mas...</a>
+                        </div>
+                    </div>`;
+                let contenido = document.getElementById("n" + i);
+                contenido.innerHTML = texto;
+            }            
+        })
+    }
+
+
+</script>
+</body>
 </html>
